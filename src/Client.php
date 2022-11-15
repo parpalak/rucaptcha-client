@@ -568,7 +568,7 @@ final class Client extends GenericClient
 
             $result = $this->getCaptchaResult($captchaId);
 
-            if ($result === false) {
+            if ($result === null) {
                 continue;
             }
 
@@ -605,7 +605,7 @@ final class Client extends GenericClient
         }
 
         if ($responseData['status'] === self::STATUS_CODE_CAPCHA_NOT_READY) {
-            return false;
+            return null;
         }
 
         if ($responseData['status'] === self::STATUS_CODE_OK) {
