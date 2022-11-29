@@ -22,7 +22,7 @@ final class Client extends GenericClient
 
     /* status codes */
     const STATUS_OK_REPORT_RECORDED = 'OK_REPORT_RECORDED';
-    
+
 
     /**
      * @inheritdoc
@@ -604,7 +604,7 @@ final class Client extends GenericClient
             );
         }
 
-        if ($responseData['status'] === self::STATUS_CODE_CAPCHA_NOT_READY) {
+        if ($responseData['status'] === self::STATUS_CODE_CAPCHA_NOT_READY && $responseData['request'] === self::STATUS_CAPTCHA_NOT_READY) {
             return null;
         }
 
